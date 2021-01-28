@@ -32,7 +32,7 @@ if {$target == 0 } {
   set_property board_part krtkl.com:snickerdoodle_prime_le:part0:1.0 [current_project]
 } else {
   # one
-  create_project $projectName project -part xc7z020clg400-1 -force
+  create_project $projectName project -part xc7z010clg400-1 -force
   set_property board_part krtkl.com:snickerdoodle_one:part0:1.0 [current_project]
 }
 
