@@ -10,7 +10,7 @@ set projectName blinkWithATwist
 # 0: setup project, 1: setup and compile project
 set compileProject 0
 
-# 0: plain,  1: black,  2: blue
+# 0: plain,  1: black,  2: blue, 3: one
 set target 1
 
 # 0: leave messy, 1: blow away everything but sources and .bit file
@@ -27,10 +27,14 @@ if {$target == 0 } {
   # black
   create_project $projectName project -part xc7z020clg400-3 -force
   set_property board_part krtkl.com:snickerdoodle_black:part0:1.0 [current_project]
-} else {
+} elseif {$target == 2 } {
   # blue
   create_project $projectName project -part xc7z020clg400-1 -force
   set_property board_part krtkl.com:snickerdoodle_prime_le:part0:1.0 [current_project]
+} else {
+  # one
+  create_project $projectName project -part xc7z020clg400-1 -force
+  set_property board_part krtkl.com:snickerdoodle_one:part0:1.0 [current_project]
 }
 
 # setup various project properties
